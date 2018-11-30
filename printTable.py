@@ -6,11 +6,10 @@ def printTable(stringList):
     colWidths = [0] * len(stringList)
     for w in range(len(colWidths)):
         colWidths[w] = len(max(stringList[w], key=len))
-    print(colWidths)
 
-    for n in range(len(stringList)):
-        for i in range(len(stringList[0])):
-            print(stringList[n][i].rjust(colWidths[n]))
-        print('')
+    for i in range(len(stringList[0])):
+        for n in range(len(stringList)):
+            print(stringList[n][i].rjust(colWidths[n]), end=' ')
+        print(' ')
 
 printTable(tableData)
